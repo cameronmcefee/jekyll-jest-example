@@ -1,0 +1,23 @@
+{
+  "name": "jekyll-jest-example",
+  "version": "1.0.0",
+  "description": "An example of using Jest to test Jekyll blog content",
+  "main": "index.html",
+  "scripts": {
+    "test": "bin/test"
+  },
+  "author": "Cameron McEfee",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-preset-env": "^1.6.0",
+    "jest": "^21.2.1",
+    "jest-cli": "^21.2.1"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}

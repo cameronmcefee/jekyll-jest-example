@@ -1,0 +1,24 @@
+#!/bin/bash
+# usage: bin/test
+#
+# Run tests
+
+if [ -z ${var+x} ]; then
+  # If we don't have changed files from Travis, get them ourselves
+
+  # Get what has changed since the mergebase for this branch.
+  MODIFIED=$(git diff --name-only origin/master...HEAD -- src)
+
+  # Add unstaged changes too.
+  UNSTAGED+=$(git diff --name-only -- src)
+
+  # Make a unique list of files
+  export CHANGED_FILES=$(echo "$MODIFIED $UNSTAGED" | sort -u)
+fi
+
+echo "Tests that only consider modified files will run against:"
+echo "$CHANGED_FILES"
+
+bundle exec jekyll build --config _config.yml,_config.test.yml --drafts
+
+./node_modules/.bin/jest $@

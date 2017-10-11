@@ -1,0 +1,13 @@
+---
+---
+{
+  "posts": [
+    {% for post in site.posts %}{
+      {% if post.ignore_tests %}"ignore_tests": "{{ post.ignore_tests }}",{% endif %}
+      "title": "{{ post.title | smartify }}",
+      "url": "{{ post.url }}",
+      "path": "{{ post.path }}",
+      "content": {{ post.content | strip_html | jsonify }}
+    }{% unless forloop.last %},{% endunless %}{% endfor %}
+  ]
+}

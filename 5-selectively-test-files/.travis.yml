@@ -1,0 +1,16 @@
+sudo: false
+language: node_js
+rvm:
+  - 2.2
+node_js:
+  - "7"
+cache:
+  bundler: true
+  directories:
+    - "node_modules"
+
+before_script:
+  - git remote set-branches --add origin master
+  - git fetch
+  - export CHANGED_FILES=$(git diff --name-only origin/master...HEAD -- src)
+  - bundle install
