@@ -24,9 +24,9 @@ export const getJekyllData = () => {
 //
 // Returns an array
 const filterModifiedFiles = function() {
-  const gitPaths = process.env.CHANGED_FILES
-    .split(/\s/)
-    .map(path => path.replace('src/', ''));
+  const gitPaths = process.env.CHANGED_FILES.split(/\s/).map(path =>
+    path.replace('src/', '')
+  );
   const modifiedFilePaths = _.intersection(
     this.map(file => file.path),
     _.compact(gitPaths)
@@ -41,6 +41,7 @@ export const printOnFail = (message, fn) => {
   try {
     fn();
   } catch (e) {
-    throw Error(`${message}\n\n${e.message}`);
+    e.message = `${message}\n\n${e.message}`;
+    throw e;
   }
 };

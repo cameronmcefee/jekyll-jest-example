@@ -17,6 +17,7 @@ export const printOnFail = (message, fn) => {
   try {
     fn();
   } catch (e) {
-    throw Error(`${message}\n\n${e.message}`);
+    e.message = `${message}\n\n${e.message}`;
+    throw e;
   }
 };
