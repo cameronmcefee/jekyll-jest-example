@@ -8,7 +8,7 @@ This is an example of how you can test your Jekyll blog with Jest. You may find 
 
 The contents of this repo come from the boilerplate Jekyll site created via `jekyll add <site>`. The only notable initial change is that the templates have been moved to the `src` folder and `_config.yml` has been updated accordingly to ensure it builds from there.
 
-This is a companion [to this tutorial](https://blog.sentry.io/2017/10/16/keep-your-blog-consistent-with-jekyll-and-jest), so you can find code for each step in the folders of this repo. If you would like to jump right to the complete code, [<kbd>jump to section 5</kbd>](https://github.com/cameronmcefee/jekyll-jest-example/tree/master/5-selectively-test-files)
+This is a companion [to this tutorial](https://blog.sentry.io/keep-your-blog-consistent-with-jekyll-and-jest/), so you can find code for each step in the folders of this repo. If you would like to jump right to the complete code, [<kbd>jump to section 5</kbd>](https://github.com/cameronmcefee/jekyll-jest-example/tree/master/5-selectively-test-files)
 
 | Step | Problem solved |
 | --- | --- |
